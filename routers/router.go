@@ -3,6 +3,7 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
     "github.com/mrbardia72/api-gin-mongo/controllers"
+    "github.com/mrbardia72/api-gin-mongo/controllers/auth"
 )
 
 func RouterApp()  {
@@ -10,8 +11,8 @@ func RouterApp()  {
 
     v1 := r.Group("/api/v1")
     {
-        v1.POST("/signup", controllers.Signup)
-        v1.POST("/login", controllers.Login)
+        v1.POST("/signup", auth.Signup)
+        v1.POST("/login", auth.Login)
         v1.GET("/all", controllers.AllUsers)
     }
 
