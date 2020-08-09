@@ -21,7 +21,7 @@ type UserModel struct{}
 // Signup handles registering a user
 func (u *UserModel) Signup(data forms.SignupUserCommand) error {
     // Connect to the user collection
-    collection := dbConnect.Use(databaseName, "user")
+    collection := DBConnect.Use(DatabaseName, "user")
     // Assign result to error object while saving user
     err := collection.Insert(bson.M{
         "name":        data.Name,
@@ -37,18 +37,18 @@ func (u *UserModel) Signup(data forms.SignupUserCommand) error {
 // GetUserByEmail handles fetching user by email
 func (u *UserModel) GetUserByEmail(email string) (user User, err error) {
     // Connect to the user collection
-    collection := dbConnect.Use(databaseName, "user")
+    collection := DBConnect.Use(DatabaseName, "user")
     // Assign result to error object while saving user
     err = collection.Find(bson.M{"email": email}).One(&user)
     return user, err
 }
 
 // all user
-func (u *UserModel) AllUsers() (user []User,err error)  {
-    // Connect to the user collection
-    collection := dbConnect.Use(databaseName, "user")
-    // Assign result to error object while saving user
-    err = collection.Find(bson.M{}).All(&user)
-    return user, err
+// func (u *UserModel) AllUsers() (user []User,err error)  {
+//     // Connect to the user collection
+//     collection := DBConnect.Use(DatabaseName, "user")
+//     // Assign result to error object while saving user
+//     err = collection.Find(bson.M{}).All(&user)
+//     return user, err
 
-}
+// }
