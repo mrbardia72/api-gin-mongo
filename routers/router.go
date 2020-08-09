@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-    "../controllers"
+    "github.com/mrbardia72/api-gin-mongo/controllers"
 )
 
 func RouterApp()  {

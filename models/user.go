@@ -2,8 +2,8 @@ package models
 
 import (
     "gopkg.in/mgo.v2/bson"
-    "../forms"
-    "../helpers"
+    "github.com/mrbardia72/api-gin-mongo/forms"
+    "github.com/mrbardia72/api-gin-mongo/helpers"
 )
 
 // User defines user object structure

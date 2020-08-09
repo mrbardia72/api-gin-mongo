@@ -2,10 +2,10 @@ package controllers
 
 import (
     "github.com/gin-gonic/gin"
-    "../forms"
-    "../models"
-    "../helpers"
-    "../services"
+    "github.com/mrbardia72/api-gin-mongo/forms"
+    "github.com/mrbardia72/api-gin-mongo/models"
+    "github.com/mrbardia72/api-gin-mongo/helpers"
+    "github.com/mrbardia72/api-gin-mongo/services"
 ) 
 
 // Import the userModel from the models

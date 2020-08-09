@@ -2,7 +2,7 @@ package models
 
 import (
     "os"
-    "../db"
+    "github.com/mrbardia72/api-gin-mongo/db"
 )
 
 // Mongo server ip -> localhost -> 127.0.0.1 -> 0.0.0.0

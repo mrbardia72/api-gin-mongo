@@ -14,7 +14,7 @@ commit: ## commit to github exp. run--- make commit
 
 
 .PHONY: git-push
-git-push: ## push to github exp. run--- make git-push " $u="https://github.com/your-username/your-repository.git"
+git-push: ## push to github exp. run--- make git-push u="https://github.com/your-username/your-repository.git"
 	git init
 	git add .
 	git commit -m "api-mongo-gin-${LOGFILE}"

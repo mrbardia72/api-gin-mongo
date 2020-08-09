@@ -3,7 +3,7 @@ package main
 import (
     "log"
     "github.com/joho/godotenv"
-    "./routers"
+    "github.com/mrbardia72/api-gin-mongo/routers"
 )
 
 func init() {
