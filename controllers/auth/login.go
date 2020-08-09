@@ -3,14 +3,11 @@ package auth
 import (
     "github.com/gin-gonic/gin"
     "github.com/mrbardia72/api-gin-mongo/forms"
-    "github.com/mrbardia72/api-gin-mongo/models"
+    repo_user "github.com/mrbardia72/api-gin-mongo/repository/user"
     "github.com/mrbardia72/api-gin-mongo/helpers"
     "github.com/mrbardia72/api-gin-mongo/services"
 ) 
  
-// Import the userModel from the models
-var userLoginModel = new(models.UserModel)
-
 // Login allows a user to login a user and get
 // access token
 func Login(c *gin.Context) {
@@ -23,7 +20,7 @@ func Login(c *gin.Context) {
         return
     }
 
-    result, err := userLoginModel.GetUserByEmail(data.Email)
+    result, err := repo_user.GetUserByEmail(data.Email)
 
     if result.Email == "" {
         c.JSON(404, gin.H{"message": "User account was not found"})

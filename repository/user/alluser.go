@@ -5,11 +5,8 @@ import (
 	"github.com/mrbardia72/api-gin-mongo/models"
 )
 
-// UserModel defines the model structure
-type UserModel struct{}
-
 // all user
-func (u *UserModel) AllUsers() (user []models.User,err error)  {
+func AllUser() (user []models.User,err error)  {
     // Connect to the user collection
     collection := models.DBConnect.Use(models.DatabaseName, "user")
     // Assign result to error object while saving user
