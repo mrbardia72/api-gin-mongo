@@ -20,7 +20,7 @@ func RouterApp()  {
 
     // Handle error response when a route is not defined
     r.NoRoute(func(c *gin.Context) {
-        c.JSON(404, gin.H{"code":404,"message": "404 Not found"})
+        c.JSON(404, gin.H{"code":404,"message": "Not found"})
     })
     r.Run(":5000")
 }
