@@ -15,11 +15,12 @@ func RouterApp()  {
         v1.POST("/login", auth.Login)
         v1.GET("/all", controllers.AllUsers)
         v1.DELETE("/remove/:email", controllers.RemoveUsers)
+        v1.PUT("/edit/:email",controllers.UpdateUsers)
     }
 
     // Handle error response when a route is not defined
     r.NoRoute(func(c *gin.Context) {
-        c.JSON(404, gin.H{"message": "404 Not found"})
+        c.JSON(404, gin.H{"code":404,"message": "404 Not found"})
     })
     r.Run(":5000")
 }

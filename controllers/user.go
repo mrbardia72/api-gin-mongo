@@ -28,3 +28,7 @@ func RemoveUsers(c *gin.Context)  {
     }
     c.JSON(201,gin.H{"Success":"Success remove email "  +email})
 }
+
+func UpdateUsers(c *gin.Context)  {
+    //TODO
+}
