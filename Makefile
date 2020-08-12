@@ -10,7 +10,7 @@ $(info $v run makefile.....)
 commit: ## commit to github exp. run--- make commit
 	git add .
 	git commit -m "api-mongo-gin-${LOGFILE}"
-	git push -u origin master 
+	git push 
 
 
 .PHONY: git-push
