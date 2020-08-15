@@ -16,7 +16,7 @@ func RemoveUser(email string) (err error)  {
     if err != nil {
         switch err {
         default:
-            log.Println("Failed delete book: ", err)
+            log.Println("Failed delete user: ", err)
             return
             
         case mgo.ErrNotFound:

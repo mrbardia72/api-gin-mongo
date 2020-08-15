@@ -2,6 +2,7 @@ package controllers
 
 import (
     "github.com/gin-gonic/gin"
+    "github.com/mrbardia72/api-gin-mongo/forms"
     repo_user "github.com/mrbardia72/api-gin-mongo/repository/user"
 ) 
 
@@ -18,7 +19,7 @@ func AllUsers(c *gin.Context) {
 
 // RemoveUsers controller handles
 func RemoveUsers(c *gin.Context)  {
-
+    
 	email := c.Params.ByName("email")
     err := repo_user.RemoveUser(email)
     if err != nil {
@@ -30,5 +31,20 @@ func RemoveUsers(c *gin.Context)  {
 }
 
 func UpdateUsers(c *gin.Context)  {
-    //TODO
+    
+    var data forms.SignupUserCommand
+    if c.BindJSON(&data) != nil {
+        c.JSON(406, gin.H{"message": "Provide relevant fields"})
+        c.Abort()
+        return
+        }
+
+    email := c.Params.ByName("email")
+    err := repo_user.UpdateUser(data,email)
+    if err != nil {
+        c.JSON(400, gin.H{"error": "no exists  collection for update"})
+        c.Abort()
+        return
+    }
+    c.JSON(201,gin.H{"Success":"Success update profile "})
 }

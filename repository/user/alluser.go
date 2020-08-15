@@ -10,7 +10,8 @@ func AllUser() (user []models.User,err error)  {
     // Connect to the user collection
     collection := models.DBConnect.Use(models.DatabaseName, "user")
     // Assign result to error object while saving user
-    err = collection.Find(bson.M{}).All(&user)
+    err = collection.Find(bson.M{}).All(&user) //all profiles
+    // err = collection.Find(bson.M{"name": id}).One(&user)
     return user, err
 
 }

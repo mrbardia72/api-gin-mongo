@@ -19,6 +19,6 @@ func Signup(data forms.SignupUserCommand) error {
         // This will come later when adding verification
         "is_verified": false,
     })
-
+ 
     return err
 }
