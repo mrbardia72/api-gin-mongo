@@ -16,6 +16,8 @@ func RouterApp()  {
         v1.GET("/all", controllers.AllUsers)
         v1.DELETE("/remove/:email", controllers.RemoveUsers)
         v1.PUT("/edit/:email",controllers.UpdateUsers)
+        v1.PUT("/reset-link", auth.ResetLink)
+        v1.PUT("/password-reset", auth.PasswordReset)
     }
 
     // Handle error response when a route is not defined
