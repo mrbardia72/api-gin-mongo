@@ -7,14 +7,14 @@ help: ## This help.
 $(info $v run makefile.....)
 
 .PHONY: commit
-commit: ## commit to github exp. run--- make commit
+commit: ## commit to github exp. run---> make commit
 	git add .
 	git commit -m "api-mongo-gin-${LOGFILE}"
 	git push
 
 
-.PHONY: git-push
-git-push: ## push to github exp. run--- make git-push u="https://github.com/your-username/your-repository.git"
+.PHONY: push
+push: ## push to github exp. run---> make push u="https://github.com/your-username/your-repository.git"
 	git init
 	git add .
 	git commit -m "api-mongo-gin-${LOGFILE}"
