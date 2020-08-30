@@ -53,4 +53,9 @@ services: ## create a new services ---> make services a="your-name-services"
 .PHONY: controller
 controller: ## create a new controller ---> make controller d="dir-name" a="your-name-controller"
 	@mkdir -pv controllers/$d
-	echo "package $a" >> controllers/$d/$a.go
+	echo "package $d" >> controllers/$d/$a.go
+
+.PHONY: repo
+repo: ## create a new repo ---> make repo d="dir-name" a="your-name-repository"
+	@mkdir -pv repository/$d
+	echo "package $d" >> repository/$d/$a.go
